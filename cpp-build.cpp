@@ -56,7 +56,7 @@ int main (int argsNum, char* Args[]) {
     std::string build = "g++ " + filename + ".cpp -o" + execname;
     system(build.c_str());
 
-    std::cout << "Build job ended. Attempting to run executable...\n\n";
+    std::cout << "Build job ended. Attempting to run executable...\n";
 
     if (fileCheck(execname)) {
         // Run the thing!
@@ -68,6 +68,7 @@ int main (int argsNum, char* Args[]) {
         run = "./" + execname;
         #endif
         
+        std::cout << "Running...\n\n";
         system(run.c_str());
     } else {
         std::cout << "Couldn't run executable. The build has probably failed. Fix the errors described above, and try again.\n";
